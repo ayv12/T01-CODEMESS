@@ -118,7 +118,13 @@ Dashboard (student)  /  Screening report (recruiter)
 
 ## Screenshots / Demo Information
 
-> Add screenshots here: `docs/landing.png`, `docs/service-student.png`, `docs/dashboard.png`, `docs/proof-panel.png`, `docs/recruiter.png`.
+
+![Screenshot 1](preview1.png)
+
+![Screenshot 2](preview2.png)
+
+![Screenshot 3](preview3.png)
+
 
 **3-minute live demo script:**
 1. Open the landing page — headline, dock, verification cards.
@@ -154,5 +160,5 @@ Dashboard (student)  /  Screening report (recruiter)
 - **Ayushi Labde**
 - **Himanishi Sharma**
 - **Harshita Yadav**
-- **Dhanshree Gaiwad**
+- **Dhanshree Gaikwad**
 
