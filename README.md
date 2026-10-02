@@ -158,7 +158,7 @@ Dashboard (student)  /  Screening report (recruiter)
 ## Team Members
 
 - **Ayushi Labde**
-- **Himanishi Sharma**
+- **Himanshi Sharma**
 - **Harshita Yadav**
 - **Dhanshree Gaikwad**
 
