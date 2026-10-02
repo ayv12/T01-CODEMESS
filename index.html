@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="SkillProof — evidence-based skill verification. Don't trust claims. Verify them." />
+<meta name="theme-color" content="#0F172A" />
+<title>SkillProof — Prove what you can do</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230F172A'/><circle cx='12' cy='16' r='6' fill='none' stroke='white' stroke-width='2.6'/><circle cx='20' cy='16' r='6' fill='none' stroke='%23818CF8' stroke-width='2.6'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-T0aogyvr.css">
+</head>
+<body>
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#/" aria-label="SkillProof home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="12" cy="16" r="7" fill="none" stroke="#0F172A" stroke-width="3"/><circle cx="20.5" cy="16" r="7" fill="none" stroke="#6366F1" stroke-width="3"/></svg>
+      <span class="wordmark">SkillProof</span>
+    </a>
+    <nav class="nav" id="mainNav" aria-label="Primary">
+      <span class="nav-pill" id="navPill" aria-hidden="true"></span>
+      <a href="#/" data-nav="home">Home</a>
+      <span id="authZone"></span>
+    </nav>
+  </div>
+</header>
+
+<main id="app" class="wrap" aria-live="polite">
+
+  <!-- ============ LANDING ============ -->
+  <section class="page" id="page-home">
+    <div class="hero apple-hero">
+      <h1><span class="mask"><span class="hl">Don&rsquo;t trust claims.</span></span><span class="mask"><span class="u">Verify them.</span></span></h1>
+      <p class="sub">SkillProof cross-checks resume skills against live GitHub evidence — and shows what&rsquo;s <strong>Proven</strong>, <strong>Partial</strong>, or only <strong>Claimed</strong>.</p>
+      <p class="dock-hint">Pick a path in the dock below to begin.</p>
+    </div>
+
+    <section class="vcarousel reveal" aria-label="What you can verify">
+      <div class="vcard v1 hot" tabindex="0">
+        <p class="vnum">01</p>
+        <p class="mono vtag">RESUME</p>
+        <h3>Verify the Resume</h3>
+        <p class="vline">Skills on paper. Evidence to match.</p>
+      </div>
+      <div class="vcard v2" tabindex="0">
+        <p class="vnum">02</p>
+        <p class="mono vtag">GITHUB</p>
+        <h3>Verify the GitHub</h3>
+        <p class="vline">Code, contributions, and projects — all in one place.</p>
+      </div>
+      <div class="vcard v3" tabindex="0">
+        <p class="vnum">03</p>
+        <p class="mono vtag">PORTFOLIO</p>
+        <h3>Verify the Portfolio</h3>
+        <p class="vline">See what they&rsquo;ve built beyond the resume.</p>
+      </div>
+    </section>
+
+    <!-- Apple-style dark showcase: headline sharpens on scroll, number counts up -->
+    <div class="showcase reveal" id="showcase">
+      <p class="show-kicker">EVIDENCE, UP CLOSE</p>
+      <h2 class="show-title">Every claim.<br />One click from proof.</h2>
+      <div class="show-grid">
+        <div class="show-stat"><div class="show-num"><span id="showPct">0</span>%</div><p>job match, computed from live code — not keywords</p></div>
+        <div class="show-code mono">you/flask-notes-api<br />├─ app/routes.py <span class="ok">✓ Flask</span><br />├─ tests/test_api.py <span class="ok">✓ pytest</span><br />└─ a3f9c1e · 12 days ago</div>
+      </div>
+    </div>
+
+    <p class="scoring-note reveal">Scoring is transparent: claim +1 · code files +3 · recent activity +2 · README +1 · tests +1 · deployment +1. Proven ≥ 7 · Partial 3–6 · Claimed-only ≤ 2. Evidence suggests contribution — it never proves authorship.</p>
+  </section>
+
+  <!-- ============ LOGIN (step 1: the gate) ============ -->
+  <section class="page" id="page-login">
+    <div class="login-card">
+      <div class="login-brand">
+        <svg class="mark mark-lg" viewBox="0 0 32 32" aria-hidden="true"><circle cx="12" cy="16" r="7" fill="none" stroke="#FFFFFF" stroke-width="3"/><circle cx="20.5" cy="16" r="7" fill="none" stroke="#818CF8" stroke-width="3"/></svg>
+        <h2>Proof,<br />not promises.</h2>
+        <p>Sign in to verify skills against live GitHub evidence.</p>
+        <div class="login-pills"><span>✓ Proven</span><span>◐ Partial</span><span>✕ Claimed-only</span></div>
+      </div>
+      <div class="login-form">
+        <h2 class="section-title">Log in</h2>
+        <p class="section-sub">Who are you? Pick your side — your workspace is built for that role only.</p>
+        <div class="lidock" id="liDock" role="group" aria-label="I am a">
+          <button type="button" class="lidock-item" data-mode="seeker" aria-pressed="true">
+            <span class="dock-icon dock-student"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.7 12 1.7 12 0v-4.5"/><path d="M22 9v5"/></svg></span>
+            <span class="lidock-label">Student</span>
+          </button>
+          <button type="button" class="lidock-item" data-mode="recruiter" aria-pressed="false">
+            <span class="dock-icon dock-recruiter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+            <span class="lidock-label">Recruiter</span>
+          </button>
+        </div>
+        <form id="liForm" novalidate>
+          <div class="field"><label for="liEmail">Email</label><input class="input" id="liEmail" type="email" placeholder="you@example.com" autocomplete="email" /></div>
+          <div class="field"><label for="liPass">Password</label><input class="input" id="liPass" type="password" placeholder="••••••••" autocomplete="current-password" /></div>
+          <div class="err" id="liErr" role="alert" hidden></div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Log in →</button>
+          <p class="hint" style="text-align:center;margin-top:10px"><a href="#/">← Back home</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE (step 2: shown only after login, fits one screen) ============ -->
+  <section class="page" id="page-service">
+    <div class="svc">
+      <div class="svc-head">
+        <div><p class="kicker">SkillProof service</p><h2 class="svc-title">Prove it.</h2></div>
+        <div class="svc-user"><span class="mono" id="svcEmail"></span><button class="link-btn" id="svcLogout">Log out</button></div>
+      </div>
+      <p class="kicker" id="svcRole" style="margin:16px 0 0">Student workspace</p>
+      <p class="section-sub" id="startSub" style="margin:6px 0 14px">Student mode: verify yourself against a real job and get tasks to close gaps.</p>
+      <form id="uForm" novalidate>
+        <div class="svc-grid">
+          <section class="svc-sec">
+            <p class="svc-step"><span>01</span><span><strong>Identity</strong><em>Who is being verified?</em></span></p>
+            <div class="field"><label for="uName" id="uNameLabel">Your name</label><input class="input" id="uName" placeholder="e.g. Ayushi Labde" autocomplete="name" /></div>
+            <div class="field"><label for="uResume">Resume PDF</label>
+              <div class="drop drop-slim" id="uDrop" role="button" tabindex="0" aria-label="Upload resume PDF">
+                <strong id="uDropLabel">Drop PDF here or browse</strong>
+                <small>Parsed locally · max 5 MB</small>
+                <input type="file" id="uResume" accept="application/pdf" hidden />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom:0"><label for="uSkills">Or paste skills</label><textarea class="input small" id="uSkills" placeholder="Python, Flask, React, Docker, AWS…"></textarea></div>
+          </section>
+          <section class="svc-sec">
+            <p class="svc-step"><span>02</span><span><strong>Evidence source</strong><em>Where is the proof?</em></span></p>
+            <div class="field"><label for="uGithub">GitHub username</label><input class="input mono" id="uGithub" placeholder="ayv12 or full profile URL" autocomplete="username" /></div>
+            <p class="hint">Plain username or full <span class="mono">github.com/…</span> link — both work. Public repos only.</p>
+            <details class="tok"><summary>Advanced: GitHub token (optional)</summary><input class="input mono" id="uToken" placeholder="ghp_…" autocomplete="off" /></details>
+          </section>
+          <section class="svc-sec">
+            <p class="svc-step"><span>03</span><span><strong>Target &amp; go</strong><em>What role are we checking?</em></span></p>
+            <div class="field"><label for="uJd">Target job</label>
+              <div class="role-chips" role="group" aria-label="Role presets">
+                <button type="button" class="chip" aria-pressed="false" data-role="Junior Backend Developer — Python, Flask, REST APIs, PostgreSQL, Docker, Git, pytest. Bonus: AWS, Redis, CI/CD. 0–2 years.">Backend</button>
+                <button type="button" class="chip" aria-pressed="false" data-role="Frontend Intern — JavaScript, React, HTML, CSS, Git, REST APIs. Bonus: TypeScript, Vercel deployment.">Frontend</button>
+                <button type="button" class="chip" aria-pressed="false" data-role="Data Analyst Intern — Python, SQL, PostgreSQL, Machine Learning basics, Git. Bonus: MongoDB.">Data</button>
+                <button type="button" class="chip" aria-pressed="false" data-role="AI/ML Intern — Python, Machine Learning, REST APIs, Git, Linux. Bonus: Docker, AWS.">AI/ML</button>
+              </div>
+              <div style="height:8px"></div>
+              <textarea class="input" id="uJd" placeholder="Paste the job description, or tap a preset."></textarea>
+            </div>
+            <p class="svc-note" id="svcNote">✅ Resume stays in your browser.<br />✅ Only public repos are read.<br />✅ Every verdict links to proof.</p>
+            <div class="alert-warn" id="svcFair" hidden style="margin-bottom:12px"><strong>Fair-review note:</strong> “Reviewed” means you viewed the report — it never guarantees authenticity.</div>
+            <div class="err" id="uErr" role="alert" hidden></div>
+            <button class="btn btn-primary" id="uSubmit" type="submit">Verify my skills →</button>
+            <p class="hint">Takes ~30 seconds for a typical profile.</p>
+          </section>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ ANALYZING ============ -->
+  <section class="page" id="page-analyzing">
+    <div class="card loader-shell">
+      <h2 class="section-title" id="loadTitle">Cross-checking claims vs live code…</h2>
+      <p class="section-sub" id="loadSub">Starting…</p>
+      <div class="pulse-list" id="pulseList"></div>
+      <div class="err" id="loadErr" role="alert" hidden></div>
+      <div id="loadRetry" hidden><a class="btn btn-ghost btn-small" href="#/" data-goto-start>← Back to form</a></div>
+    </div>
+  </section>
+
+  <!-- ============ STUDENT DASHBOARD ============ -->
+  <section class="page" id="page-dashboard">
+    <div id="dashEmpty"></div>
+    <div id="dashBody" hidden>
+      <div class="rep-head">
+        <div>
+          <p class="kicker">Evidence report</p>
+          <h2 class="rep-name" id="dName"></h2>
+          <p class="rep-meta" id="dMeta"></p>
+        </div>
+        <a class="btn btn-ghost btn-small" href="#/" data-goto-start>← New analysis</a>
+      </div>
+
+      <div class="match-hero">
+        <div class="ring-xl" role="img" id="ringAria" aria-label="Job match">
+          <svg width="176" height="176" viewBox="0 0 180 180"><circle cx="90" cy="90" r="80" fill="none" stroke="#D8CCBA" stroke-width="18"/><circle id="ringFg" cx="90" cy="90" r="80" fill="none" stroke="#6366F1" stroke-width="18" stroke-linecap="round" stroke-dasharray="502.65" stroke-dashoffset="502.65"/></svg>
+          <b><span id="matchNum">0</span><small>%</small></b>
+        </div>
+        <div class="match-copy">
+          <p class="kicker">Job match</p>
+          <p class="match-role" id="dRole"></p>
+          <p class="muted" id="dMatchSub"></p>
+        </div>
+        <div class="match-side">
+          <div class="side-block"><p class="kicker">Estimated salary</p><p class="salary-big" id="dSalary"></p><p class="muted" id="dSalaryWhy"></p></div>
+          <div class="side-block"><p class="kicker">Also strong for</p><div id="altRoles"></div></div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+      <section>
+        <p class="kicker">Skill evidence · <span id="skillCount"></span></p>
+        <p class="why">Which resume claims your GitHub backs up. Green is hire-ready. Amber is real but thin. Red has no supporting code.</p>
+        <div class="ev-cols" id="skillCols"></div>
+      </section>
+
+      <hr class="rule" />
+      <section><p class="kicker">Hidden skills</p><p class="why">Skills your code proves that your resume forgot. Free wins — add them.</p><div id="hiddenGrid"></div></section>
+
+      <hr class="rule" />
+      <div class="rail-2">
+        <section><p class="kicker">Collaboration</p><p class="why">Teamwork told through PRs, reviews and issues.</p><div id="collabBox"></div></section>
+        <section><p class="kicker">Recency</p><p class="why">How fresh each skill is. Active impresses; stale needs a new commit.</p><div id="recencyBox"></div></section>
+      </div>
+
+      <hr class="rule" />
+      <section><p class="kicker">Gaps → micro-tasks</p><p class="why">The exact next project that turns each weak skill green. Do these in order.</p><div id="microList"></div>
+        <p class="limit" id="dLimit"></p>
+        <div style="margin-top:16px"><button class="btn btn-ghost btn-small" id="dlReport">↓ Report as PDF</button></div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ RECRUITER RESULTS ============ -->
+  <section class="page" id="page-rresults">
+    <div id="rDashEmpty"></div>
+    <div id="rDashBody" hidden>
+      <div class="rep-head">
+        <div>
+          <p class="kicker">Candidate screening</p>
+          <h2 class="rep-name" id="rName"></h2>
+          <p class="rep-meta" id="rMeta"></p>
+        </div>
+        <a class="btn btn-ghost btn-small" href="#/" data-goto-start>← Screen another</a>
+      </div>
+
+      <p class="kicker" style="margin-top:26px">01 · Hiring signal</p>
+      <p class="why">The one-glance verdict — overall evidence match and how the required skills split.</p>
+      <div class="match-hero match-hero-r">
+        <div class="ring-xl" role="img" aria-label="Evidence match">
+          <svg width="176" height="176" viewBox="0 0 180 180"><circle cx="90" cy="90" r="80" fill="none" stroke="#D8CCBA" stroke-width="18"/><circle id="ringFg2" cx="90" cy="90" r="80" fill="none" stroke="#6366F1" stroke-width="18" stroke-linecap="round" stroke-dasharray="502.65" stroke-dashoffset="502.65"/></svg>
+          <b><span id="matchNum2">0</span><small>%</small></b>
+        </div>
+        <div class="match-copy">
+          <p class="kicker">Evidence match</p>
+          <p class="match-role" id="rVerdict"></p>
+          <p class="muted" id="rVerdictSub"></p>
+        </div>
+        <div class="match-side"><div class="side-block"><p class="kicker">Required-skill split</p><div id="rBreakdown"></div></div></div>
+      </div>
+
+      <hr class="rule" />
+      <section><p class="kicker">02 · Risk flags</p><p class="why">Where the candidate is weakest — probe exactly these in interviews.</p><div id="riskBox"></div></section>
+
+      <hr class="rule" />
+      <section><p class="kicker">03 · Evidence by skill</p><p class="why">Every required skill with its proof (or lack of it). Click any skill for repos, files and commits.</p><div class="ev-cols" id="skillColsR"></div></section>
+
+      <hr class="rule" />
+      <section><p class="kicker">04 · Interview questions</p><p class="why">Generated from this candidate&rsquo;s actual repos and gaps — no generic list.</p><ol class="interview" id="intQs"></ol></section>
+
+      <hr class="rule" />
+      <section><p class="kicker">05 · Private review notes</p><p class="why">Your own verdict. Stored <strong>only in this browser</strong> (per candidate) — the candidate never sees it and it never alters any report.</p>
+        <div class="notes-row"><span>Status</span><select class="input" id="reviewStatus" style="width:190px;padding:9px 12px"><option>Not reviewed</option><option>Reviewed — shortlist</option><option>Reviewed — reject</option><option>Needs interview</option></select></div>
+        <textarea class="input" id="reviewNotes" placeholder="Your private notes…" style="min-height:110px;margin-top:10px"></textarea>
+        <div style="margin-top:10px"><button class="btn btn-dark btn-small" id="saveReview">Save private notes</button>
+        <button class="link-btn" id="clearReview" style="margin-left:10px">Clear saved notes</button>
+        <span id="savedMsg" style="color:#10B981;font-weight:700;margin-left:8px"></span></div>
+        <p class="store-line" id="notesStore"></p>
+        <p class="limit" id="rLimit"></p>
+        <div style="margin-top:16px"><button class="btn btn-ghost btn-small" id="dlReportR">↓ Report as PDF</button></div>
+      </section>
+    </div>
+  </section>
+
+</main>
+
+<!-- macOS-style dock: picks a role and jumps to the start form (landing only) -->
+<nav class="dock" id="dock" aria-label="Get started">
+  <button type="button" class="dock-item" data-start="seeker" aria-label="I'm a Student">
+    <span class="dock-tip">Student — verify my skills</span>
+    <span class="dock-icon dock-student"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.7 12 1.7 12 0v-4.5"/><path d="M22 9v5"/></svg></span>
+  </button>
+  <button type="button" class="dock-item" data-start="recruiter" aria-label="I'm a Recruiter">
+    <span class="dock-tip">Recruiter — screen a candidate</span>
+    <span class="dock-icon dock-recruiter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+  </button>
+</nav>
+
+<!-- Proof slide-over -->
+<div class="overlay" id="overlay"></div>
+<aside class="proof" id="proofPanel" role="dialog" aria-modal="true" aria-labelledby="proofTitle" aria-hidden="true">
+  <div class="proof-head">
+    <div><span class="badge b-proven" id="proofBadge">PROVEN</span><h2 id="proofTitle" style="margin:8px 0 2px;font-size:20px"></h2><p class="section-sub" id="proofSub" style="margin:0"></p></div>
+    <button class="close-x" id="proofClose" aria-label="Close proof panel">✕</button>
+  </div>
+  <div class="proof-body" id="proofBody"></div>
+</aside>
+
+<footer class="site-footer"><div class="wrap">
+  <a class="brand brand-w" href="#/" aria-label="SkillProof home">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="12" cy="16" r="7" fill="none" stroke="#FFFFFF" stroke-width="3"/><circle cx="20.5" cy="16" r="7" fill="none" stroke="#818CF8" stroke-width="3"/></svg>
+    <span class="wordmark">SkillProof</span>
+  </a>
+  <span>Prove what you can do. Live public GitHub evidence — signals suggest contribution, never authorship.</span>
+  <span class="mono">SKILLPROOF · v5 RAY · MMXXVI</span>
+</div></footer>
+
+<script src="./app.js"></script>
+</body>
+</html>
