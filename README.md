@@ -21,20 +21,7 @@ No backend, no fake data: every verdict traces to live evidence, and limits (rat
 
 ---
 
-## Setup & Installation Instructions
-
-**Prerequisites:** Node.js 18+ and any modern browser (Chrome recommended).
-
-```bash
-# 1. Open the project folder
-cd "C:\Users\Ayushi\Documents\Default Project"
-
-# 2. Install dependencies (one time)
-npm install
-
-# 3. Run the dev server
-npx vite --port 5173
-```
+ 
 
 Then open **http://localhost:5173/** in your browser.
 
