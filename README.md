@@ -23,33 +23,30 @@ No backend, no fake data: every verdict traces to live evidence, and limits (rat
 
  
 
-Then open **http://localhost:5173/** in your browser.
-
-**No-server option:** double-click `index.html` in the project folder — the app runs fully from local files (internet needed only for fonts + CDN libraries).
-
-**Production build (for hosting):**
-
-```bash
-npx vite build   # outputs a host-ready site into /dist
-```
-
-Drag the `dist` folder onto `app.netlify.com/drop` (or any static host) to go live. No build command or redirects needed — all routes are hash-based.
-
----
-
 ## Key Features
 
 - **Role-gated login** — Student / Recruiter picked once at login (Apple-dock style selector); each role sees only its own Sage-green (student) or Clay (recruiter) workspace.
+  
 - **Claim vs Code Detector** — resume skills extracted locally, cross-checked against real repo evidence.
+  
 - **Show Me the Proof** — every skill expands into repos, file hits, push dates, and live latest commits.
+  
 - **Hidden Skill Discovery** — strong code evidence for skills missing from the resume, surfaced as free wins.
+  
 - **Job Fit Analysis** — JD skill extraction, weighted match %, required-skill split.
+  
 - **Salary Estimate + Other Eligible Roles** — rule-based bands labeled as estimates, ranked role fits.
+  
 - **Gap → Micro-task Generator** — each weak skill becomes one concrete, repo-specific task.
+  
 - **Collaboration Analyzer** — PRs opened, reviews, issue activity from the public events feed.
+  
 - **Skill Recency** — Active (<6 mo) / Dormant (6–24 mo) / Stale from real push dates.
+  
 - **Recruiter toolkit** — risk flags, evidence-generated interview questions, private per-candidate notes (localStorage), fair-review wording.
+  
 - **Report as PDF** — one-click print-optimized export of either dashboard.
+  
 - **Login-gated service** — dashboards, notes, and analysis are unreachable without sign-in; logout wipes session, report, and all form fields.
 
 ---
