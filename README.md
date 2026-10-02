@@ -126,16 +126,7 @@ Dashboard (student)  /  Screening report (recruiter)
 ![Screenshot 3](preview3.png)
 
 
-**3-minute live demo script:**
-1. Open the landing page — headline, dock, verification cards.
-2. Log in as **Student** (any email + 4-char password, e.g. `demo@test.com` / `demo1234`).
-3. Paste a GitHub username (e.g. `torvalds`), attach any resume PDF (or paste `Python, Flask, React, Docker, AWS`), tap **Junior Backend**, submit.
-4. Show the dashboard: match ring, Proven / Partial / Claimed-only columns.
-5. Click **"Show me the proof →"** on Python — real files + latest commits appear.
-6. Point out a **Hidden skill**, a gap → micro-task, then **↓ Report as PDF**.
-7. Log out, log back in as **Recruiter**, repeat — show risk flags, interview questions, private notes.
-
----
+--
 
 ## Limitations & Future Scope
 
